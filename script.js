@@ -23,15 +23,16 @@ function drawGrid(gridSize){
     let boxWidth =containerWidth / gridSize
     let boxHeight = containerHeight/ gridSize
     for (let i = 0; i < gridSize; i++) {
-        console.log(containerWidth)
-        console.log(boxWidth)
     for (let j = 0; j < gridSize; j++) {  
         let box = document.createElement("div");
         box.classList.add("gridBox");
         box.style.width = boxWidth + "px";
         box.style.height = boxHeight+ "px";
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "black"
+            box.style.outlineColor = "white"
+        })
         container.appendChild(box);
         }
     }
-
 }
