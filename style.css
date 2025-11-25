@@ -9,17 +9,16 @@ body{
     box-sizing: border-box;
 }
 .container {
-    width : 600px;
-    height: 600px;
+    width : 560px;
+    height: 560px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    border: 2px solid black;
     gap: 0;
 }
 
 .gridBox{
-    background-color: blue;
-    outline: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    outline: 1px solid black;
     flex: 0 0 auto;
 }

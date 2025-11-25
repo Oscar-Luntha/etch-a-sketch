@@ -1,4 +1,5 @@
 let container = document.querySelector(".container")
+drawGrid(1)
 let btn = document.querySelector("button")
 let defaultGrid = 16;
 btn.addEventListener("click", () => {
