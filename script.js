@@ -5,8 +5,12 @@ btn.addEventListener("click", () => {
     getGridSize()
 })
 function getGridSize(){
-    gridSize = prompt("Enter grid size in range 1 - 100");
-    console.log(gridSize)
+    let userInput = prompt("Enter grid size in range 1 - 100");
+    let gridSize = parseInt(userInput, 10)
+    console.log(typeof(gridSize))
+    if(gridSize < 1 || gridSize > 100){
+        getGridSize()
+    }
     drawGrid(gridSize)
     return gridSize;
 }
@@ -15,6 +19,5 @@ function drawGrid(gridSize){
     let containerWidth = position.width
     let containerHeight = position.height
     let boxWidth = containerWidth / gridSize
-    let boxHeight = containerHeight / gridSize
-    console.log(boxHeight, boxWidth)
+    let boxHeight = containerHeight / gridSize    
 }
