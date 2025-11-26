@@ -21,6 +21,25 @@ h1 {
     margin-bottom: 5px;
 }
 
+button {
+    padding: 10px 20px;
+    background-color: #1e293b;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+button:hover {
+    background-color: #334155;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
 
 .container {
     width : 560px;
