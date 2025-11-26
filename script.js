@@ -8,12 +8,12 @@ btn.addEventListener("click", () => {
 function getGridSize(){
     let userInput = prompt("Enter grid size in range 1 - 100");
     let gridSize = parseInt(userInput, 10)
-    console.log(typeof(gridSize))
     if(gridSize < 1 || gridSize > 100){
         getGridSize()
+    }else{
+        drawGrid(gridSize)
     }
-    drawGrid(gridSize)
-    return gridSize;
+
 }
 function drawGrid(gridSize){
     container.innerHTML = "";
@@ -29,8 +29,10 @@ function drawGrid(gridSize){
         box.style.width = boxWidth + "px";
         box.style.height = boxHeight+ "px";
         box.addEventListener("mouseover", () => {
-            box.style.backgroundColor = "black"
-            box.style.outlineColor = "white"
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            box.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
         })
         container.appendChild(box);
         }
