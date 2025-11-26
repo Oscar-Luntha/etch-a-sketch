@@ -3,11 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    width: 100vw;
+
+body {
     height: 100vh;
-    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
 }
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+
 .container {
     width : 560px;
     height: 560px;
