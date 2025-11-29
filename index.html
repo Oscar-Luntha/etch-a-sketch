@@ -1,17 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Etch sketch</title>
-</head>
-<body>
-    <h1>Welcome to etch-e-sketch</h1>
-    <button>Set grid</button>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EAK - Etch-a-Sketch</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">EAK</div>
+            <button class="menu-btn" style="pointer-events: none">
+                <span>Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </header>
 
-    </div>
-    <script src="script.js"></script>
-</body>
+        <main class="game-content">
+            <h1 class="game-title">
+                Etch-a-<span class="italic">Sketch</span>
+            </h1>
+
+            <div class="game-info">
+                <div class="level-indicator">
+                    Level <span id="currentLevel">1</span> of 5
+                </div>
+                <div
+                    class="difficulty-badge difficulty-easy"
+                    id="difficultyBadge"
+                >
+                    Easy
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="click">
+                        Click Mode
+                    </button>
+                    <button class="mode-btn" data-mode="hover">
+                        Hover Mode
+                    </button>
+                </div>
+                <div class="action-buttons">
+                    <button class="clear-btn" id="clearBtn">Clear Grid</button>
+                    <button class="check-btn" id="checkBtn">Check Match</button>
+                </div>
+            </div>
+
+            <div class="gamespace">
+                <div class="grid-wrapper">
+                    <div class="grid-label">Your Drawing</div>
+                    <div class="container" id="drawingGrid"></div>
+                </div>
+                <div class="grid-wrapper">
+                    <div class="grid-label">Target Pattern</div>
+                    <div class="container" id="patternGrid"></div>
+                </div>
+            </div>
+
+            <button class="rotate-btn" aria-label="Rotate view">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"
+                    />
+                </svg>
+            </button>
+        </main>
+
+        <div class="modal" id="resultModal">
+            <div class="modal-content">
+                <div class="modal-title success" id="modalTitle">Success!</div>
+                <div class="modal-message" id="modalMessage">
+                    You matched the pattern!
+                </div>
+                <div class="modal-buttons">
+                    <button id="retryBtn">Retry Level</button>
+                    <button class="next-btn" id="nextBtn">Next Level</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="js/index.js"></script>
+    </body>
 </html>
