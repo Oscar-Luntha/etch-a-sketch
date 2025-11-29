@@ -74,7 +74,7 @@ export function drawGrid(
     }
 
     if (i === bottomRight) {
-      box.style.borderTopRightRadius = "6px";
+      box.style.borderBottomRightRadius = "6px";
     }
 
     if (!isPattern) {
