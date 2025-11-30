@@ -9,7 +9,7 @@
     <body>
         <header class="header">
             <div class="logo">EAK</div>
-            <button class="menu-btn" style="pointer-events: none">
+            <button class="menu-btn" id="menu-btn">
                 <span>Menu</span>
                 <div class="hamburger">
                     <span></span>
@@ -18,7 +18,7 @@
                 </div>
             </button>
         </header>
-        <div class="menu-screen">
+        <div class="menu-screen" style="display: flex;">
             <h1 class="game-title">
                 Etch-a-<span class="italic">Sketch</span>
             </h1>
@@ -26,7 +26,7 @@
             <button class="settings-button" id="settingsButton">Settings</button>
         </div>
 
-        <main class="game-content">
+        <main class="game-content" style="display: none;">
             <div class="game-info">
                 <div class="level-indicator">
                     Level <span id="currentLevel">1</span> of 5

@@ -19,6 +19,9 @@ const modalTitle = document.getElementById("modalTitle");
 const modalMessage = document.getElementById("modalMessage");
 const retryBtn = document.getElementById("retryBtn");
 const nextBtn = document.getElementById("nextBtn");
+const playBtn = document.getElementById("playButton")
+const menuBtn = document.getElementById("menu-btn")
+const visibilityToggle = [playBtn , menuBtn]
 
 let currentPaintMode = "click"; // TODO: user should be able to cycle through click and hover (i don't recommend this tho)
 let currentLevel = 1;
@@ -100,6 +103,21 @@ modeBtns.forEach((btn) => {
     initLevel(currentLevel);
   });
 });
+
+visibilityToggle.map(btn => {
+  btn.addEventListener('click', () => {
+  const gameContent = document.querySelector(".game-content")
+  const menuScreen = document.querySelector(".menu-screen")
+  if (gameContent.style.display === "none") {
+    gameContent.style.display = "block";
+    menuScreen.style.display = "none"
+    initLevel(currentLevel);
+   } else {
+     gameContent.style.display = "none";
+     menuScreen.style.display = "flex"
+   }
+  })
+})
 
 clearBtn.addEventListener("click", () => {
   clearDrawingGrid(
@@ -188,4 +206,4 @@ function initLevel(level) {
 document.querySelector(".menu-btn").addEventListener("click", toggleTheme);
 document.querySelector(".rotate-btn").addEventListener("click", rotateView);
 
-initLevel(1);
+// initLevel(1);
